@@ -1,0 +1,24 @@
+<div align="center">
+  <div class="col-md-6 user-container">
+    <h2 class="text-center">Add List</h2>
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" formControlName="name" placeholder="Name" name="Name" class="form-control"
+               id="name">
+      </div>
+      <br/>
+
+      <div class="form-group">
+        <label for="name">Initial book in list:</label>
+        <br/>
+        <select class="form-select">
+          <option formControl="name" *ngFor="let book of books">{{book['title']}}</option>
+        </select>
+      </div>
+
+      <br/>
+      <button class="btn btn-success">✚ Add</button>
+    </form>
+  </div>
+</div>

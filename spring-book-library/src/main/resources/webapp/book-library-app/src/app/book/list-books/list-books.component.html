@@ -1,0 +1,50 @@
+<div align="center" xmlns="http://www.w3.org/1999/html">
+  <div align='center'>
+    <h1>📚 Books</h1>
+  </div>
+
+  <br/><br/>
+  <div class="container">
+    <div class="row">
+      <div class="col"></div>
+      <table class="table-primary col-6" style="width: 100%">
+        <tr class="table-primary">
+          <th class="table-primary">Title</th>
+          <th class="table-primary">Genre</th>
+          <th class="table-primary">Author</th>
+          <th class="table-primary">ISBN</th>
+          <th class="table-primary"></th>
+        </tr>
+        <tr *ngFor="let book of books" class="table-primary">
+          <td class="table-primary">
+            {{book.title}}
+          </td>
+          <td class="table-primary">
+            {{book.genre}}
+          </td>
+          <td class="table-primary">
+            {{book.author}}
+          </td>
+          <td class="table-primary">
+            {{book.isbn}}
+          </td>
+          <td class="table-primary">
+              <button (click)="viewBook(book)" class="btn btn-primary" style="color: white">↓ View</button>
+              &nbsp;
+              <button (click)="editBook(book)" class="btn btn-warning" style="color: white">✎ Edit</button>
+              &nbsp;
+              <button (click)="deleteBook(book)" class="btn btn-danger">✕ Delete</button>
+          </td>
+        </tr>
+      </table>
+      <div class="col"></div>
+    </div>
+    <br/><br/><br/>
+    <div class="row">
+        <p>
+          <button (click)="addBook()" class="btn btn-success">✚ Add Book</button>
+        </p>
+    </div>
+
+  </div>
+</div>
