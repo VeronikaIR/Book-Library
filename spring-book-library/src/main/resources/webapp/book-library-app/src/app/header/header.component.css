@@ -1,0 +1,5 @@
+.btn:hover {
+  background-color: rgba(0, 140, 186, 0.72);
+  color: white;
+  border: 2px solid #008CBA;
+}
