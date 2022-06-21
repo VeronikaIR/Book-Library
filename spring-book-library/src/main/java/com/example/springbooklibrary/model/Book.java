@@ -21,6 +21,8 @@ public class Book {
 
     private String isbn;
 
+    private String coverUrl;
+
     @OneToMany(mappedBy="book", cascade = {CascadeType.REMOVE})
     @JsonIgnoreProperties("book")
     private Set<Note> notes;
@@ -67,6 +69,14 @@ public class Book {
 
     public void setIsbn(String isbn) {
         this.isbn = isbn;
+    }
+
+    public String getCoverUrl() {
+        return coverUrl;
+    }
+
+    public void setCoverUrl(String coverUrl) {
+        this.coverUrl = coverUrl;
     }
 
     public Set<Note> getNotes() {

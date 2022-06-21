@@ -1,7 +1,7 @@
-<div align="center">
-  <div class="col-md-6 user-container">
+<div>
+  <div class="col-md-6 offset-3 user-container">
     <h2 class="text-center">Add Book</h2>
-    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()" align="left">
       <div class="form-group">
         <label for="title">Title:</label>
         <input type="text" formControlName="title" placeholder="Title" name="title" class="form-control"
@@ -27,9 +27,19 @@
         <input type="isbn" formControlName="isbn" placeholder="ISBN" name="isbn" class="form-control"
                id="isbn">
       </div>
+      <br/>
+
+      <div class="form-group">
+        <label for="isbn">Cover URL:</label>
+        <input type="isbn" formControlName="coverUrl" placeholder="Cover URL" name="coverUrl" class="form-control"
+               id="coverUrl">
+      </div>
 
       <br/>
-      <button class="btn btn-success">✚ Add</button>
+
+      <div align="right">
+        <button class="btn btn-success">✚ Add</button>
+      </div>
     </form>
   </div>
 </div>

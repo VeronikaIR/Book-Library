@@ -1,7 +1,16 @@
-<div align="center">
-  <div class="col-md-6 user-container">
-    <h2 class="text-center">Book details</h2>
-    <form [formGroup]="editForm">
+<div>
+  <div align="center">
+    <h2>Book details</h2>
+    <img src="{{book.coverUrl}}" width="200" height="320">
+  </div>
+  <br/>
+  <div class="col-md-6 offset-3 user-container">
+    <form [formGroup]="editForm" align="left">
+      <br/>
+      <div align="right">
+        <button (click)="editBook(book)" class="btn btn-warning">✎ Edit</button>
+      </div>
+
       <div class="form-group">
         <label for="title">Title:</label>
         <input type="text" formControlName="title" placeholder="Title" name="title" class="form-control"
@@ -27,9 +36,15 @@
         <input type="isbn" formControlName="isbn" placeholder="ISBN" name="isbn" class="form-control"
                id="isbn" readonly>
       </div>
+      <br/>
+
+      <div class="form-group">
+        <label for="isbn">Cover URL:</label>
+        <input type="isbn" formControlName="coverUrl" placeholder="Cover URL" name="coverUrl" class="form-control"
+               id="coverUrl" readonly>
+      </div>
 
       <br/>
-      <button (click)="editBook(book)" class="btn btn-warning">✎ Edit</button>
     </form>
   </div>
 </div>

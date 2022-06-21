@@ -21,7 +21,8 @@ export class AddBookComponent implements OnInit {
       title: ['', Validators.required],
       genre: ['', Validators.required],
       author: ['', Validators.required],
-      isbn: ['', Validators.required]
+      isbn: ['', Validators.required],
+      coverUrl: ['', Validators.required]
     });
   }
 

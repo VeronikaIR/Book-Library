@@ -38,7 +38,8 @@ export class EditBookComponent implements OnInit {
         title: [this.book.title, Validators.required],
         genre: [this.book.genre, Validators.required],
         author: [this.book.author, Validators.required],
-        isbn: [this.book.isbn, Validators.required]
+        isbn: [this.book.isbn, Validators.required],
+        coverUrl: [this.book.coverUrl, Validators.required]
       });
     });
   }

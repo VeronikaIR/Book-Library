@@ -1,7 +1,9 @@
-<div align="center">
-  <div class="col-md-6 user-container">
+<div>
+  <div align="center">
     <h2 class="text-center">Add List</h2>
-    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+  </div>
+  <div class="col-md-6 offset-3 user-container">
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()" style="font-weight: bold">
       <div class="form-group">
         <label for="name">Name:</label>
         <input type="text" formControlName="name" placeholder="Name" name="Name" class="form-control"
@@ -10,7 +12,7 @@
       <br/>
 
       <div class="form-group">
-        <label for="name">Initial book in list:</label>
+        <label for="name">Select books for list:</label>
         <br/>
         <select multiple formControlName="books" class="form-select">
           <option name="books" class="form-control"
@@ -19,7 +21,10 @@
       </div>
 
       <br/>
-      <button class="btn btn-success">✚ Add</button>
+
+      <div align="right">
+        <button class="btn btn-success">✚ Add</button>
+      </div>
     </form>
   </div>
 </div>

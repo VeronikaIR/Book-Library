@@ -10,12 +10,16 @@
         <table class="table-primary col-6" style="width: 100%">
           <tr class="table-primary">
             <th class="table-primary">Name</th>
+            <th class="table-primary">Books</th>
             <th class="table-primary">Count</th>
             <th class="table-primary"></th>
           </tr>
           <tr *ngFor="let list of lists" class="table-primary list-row">
             <td class="table-primary">
               {{list.name}}
+            </td>
+            <td class="table-primary">
+              <img *ngFor="let book of list.books" src="{{book.coverUrl}}" height="80" width="50" style="padding-right: 2px"/>
             </td>
             <td class="table-primary">
               {{list.books.length}}
@@ -32,7 +36,7 @@
       </div>
     </div>
     <br/><br/><br/>
-    <div class="row">
+    <div class="row" align="left">
       <p>
         <button (click)="addList()" class="btn btn-success">✚ Add List</button>
       </p>

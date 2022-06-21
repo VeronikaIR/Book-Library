@@ -9,6 +9,7 @@
       <div class="col"></div>
       <table class="table-primary col-6" style="width: 100%">
         <tr class="table-primary">
+          <th class="table-primary">Cover</th>
           <th class="table-primary">Title</th>
           <th class="table-primary">Genre</th>
           <th class="table-primary">Author</th>
@@ -16,6 +17,9 @@
           <th class="table-primary"></th>
         </tr>
         <tr *ngFor="let book of books" class="table-primary book-row">
+          <td class="table-primary">
+              <img src="{{book.coverUrl}}" height="80" width="50"/>
+          </td>
           <td class="table-primary">
             {{book.title}}
           </td>
@@ -40,7 +44,7 @@
       <div class="col"></div>
     </div>
     <br/><br/><br/>
-    <div class="row">
+    <div class="row" align="left">
         <p>
           <button (click)="addBook()" class="btn btn-success">✚ Add Book</button>
         </p>

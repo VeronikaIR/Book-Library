@@ -4,4 +4,5 @@ export class Book {
   genre: string;
   author: string;
   isbn: string;
+  coverUrl: string;
 }
