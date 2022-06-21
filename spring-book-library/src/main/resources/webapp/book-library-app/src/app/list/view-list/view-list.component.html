@@ -12,9 +12,9 @@
   <br/>
 
   <div class="list-group">
-    <div *ngFor="let book of list.books" class="row">
+    <div *ngFor="let book of list.books" class="row book-row">
       <div class="col-6 offset-3">
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+        <a (click)="viewBook(book)" class="list-group-item list-group-item-action flex-column align-items-start active">
           <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1">{{book.title}}</h5>
             <small>{{book.genre}}</small>

@@ -30,4 +30,8 @@ export class ViewListComponent implements OnInit {
     });
   }
 
+  viewBook(book) {
+    this.router.navigate(['books/' + book.id + '/details']);
+  }
+
 }
