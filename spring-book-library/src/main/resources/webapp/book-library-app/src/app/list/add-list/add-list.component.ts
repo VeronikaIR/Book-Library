@@ -11,7 +11,7 @@ import {BookService} from "../../book/book-service.service";
   styleUrls: ['./add-list.component.css']
 })
 export class AddListComponent implements OnInit {
-  books: Book[];
+  existingBooks: Book[];
 
   constructor(private formBuilder: FormBuilder, private router: Router, private listService: ListService, private bookService: BookService) {
   }
@@ -22,7 +22,7 @@ export class AddListComponent implements OnInit {
     this.addForm = this.formBuilder.group({
       id: [],
       name: ['', Validators.required],
-      selectedBook: ['', Validators.required]
+      books: [null, Validators.required]
     });
     this.getBooks();
   }
@@ -38,7 +38,7 @@ export class AddListComponent implements OnInit {
 
   getBooks() {
     this.bookService.getBooks().subscribe(data => {
-      this.books = data;
+      this.existingBooks = data;
     });
   }
 

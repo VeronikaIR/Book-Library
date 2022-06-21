@@ -10,11 +10,15 @@
       <table class="table-primary col-6" style="width: 100%">
         <tr class="table-primary">
           <th class="table-primary">Name</th>
+          <th class="table-primary">Count</th>
           <th class="table-primary"></th>
         </tr>
         <tr *ngFor="let list of lists" class="table-primary">
           <td class="table-primary">
             {{list.name}}
+          </td>
+          <td class="table-primary">
+            {{list.books.length}}
           </td>
           <td class="table-primary">
             <button (click)="viewList(list)" class="btn btn-primary" style="color: white">↓ View</button>

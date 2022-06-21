@@ -12,8 +12,9 @@
       <div class="form-group">
         <label for="name">Initial book in list:</label>
         <br/>
-        <select class="form-select">
-          <option formControl="name" *ngFor="let book of books">{{book['title']}}</option>
+        <select multiple formControlName="books" class="form-select">
+          <option name="books" class="form-control"
+                  id="books" *ngFor="let book of existingBooks" [ngValue]="book">{{book.title}}</option>
         </select>
       </div>
 
