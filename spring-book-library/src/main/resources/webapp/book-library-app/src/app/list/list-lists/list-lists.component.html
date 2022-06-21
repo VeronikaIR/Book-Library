@@ -6,30 +6,30 @@
   <br/><br/>
   <div class="container">
     <div class="row">
-      <div class="col"></div>
-      <table class="table-primary col-6" style="width: 100%">
-        <tr class="table-primary">
-          <th class="table-primary">Name</th>
-          <th class="table-primary">Count</th>
-          <th class="table-primary"></th>
-        </tr>
-        <tr *ngFor="let list of lists" class="table-primary">
-          <td class="table-primary">
-            {{list.name}}
-          </td>
-          <td class="table-primary">
-            {{list.books.length}}
-          </td>
-          <td class="table-primary">
-            <button (click)="viewList(list)" class="btn btn-primary" style="color: white">↓ View</button>
-            &nbsp;
-            <button (click)="editList(list)" class="btn btn-warning" style="color: white">✎ Edit</button>
-            &nbsp;
-            <button (click)="deleteList(list)" class="btn btn-danger">✕ Delete</button>
-          </td>
-        </tr>
-      </table>
-      <div class="col"></div>
+      <div class="col-6 offset-3">
+        <table class="table-primary col-6" style="width: 100%">
+          <tr class="table-primary">
+            <th class="table-primary">Name</th>
+            <th class="table-primary">Count</th>
+            <th class="table-primary"></th>
+          </tr>
+          <tr *ngFor="let list of lists" class="table-primary list-row">
+            <td class="table-primary">
+              {{list.name}}
+            </td>
+            <td class="table-primary">
+              {{list.books.length}}
+            </td>
+            <td class="table-primary" align="right">
+              <button (click)="viewList(list)" class="btn btn-primary" style="color: white">↓ View</button>
+              &nbsp;
+              <button (click)="editList(list)" class="btn btn-warning" style="color: white">✎ Edit</button>
+              &nbsp;
+              <button (click)="deleteList(list)" class="btn btn-danger">✕ Delete</button>
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
     <br/><br/><br/>
     <div class="row">
@@ -37,6 +37,5 @@
         <button (click)="addList()" class="btn btn-success">✚ Add List</button>
       </p>
     </div>
-
   </div>
 </div>

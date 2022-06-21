@@ -15,7 +15,7 @@
           <th class="table-primary">ISBN</th>
           <th class="table-primary"></th>
         </tr>
-        <tr *ngFor="let book of books" class="table-primary">
+        <tr *ngFor="let book of books" class="table-primary book-row">
           <td class="table-primary">
             {{book.title}}
           </td>
@@ -28,7 +28,7 @@
           <td class="table-primary">
             {{book.isbn}}
           </td>
-          <td class="table-primary">
+          <td class="table-primary" align="right">
               <button (click)="viewBook(book)" class="btn btn-primary" style="color: white">↓ View</button>
               &nbsp;
               <button (click)="editBook(book)" class="btn btn-warning" style="color: white">✎ Edit</button>
