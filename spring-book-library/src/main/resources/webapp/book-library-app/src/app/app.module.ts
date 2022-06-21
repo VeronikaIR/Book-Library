@@ -14,6 +14,7 @@ import { ViewBookComponent } from './book/view-book/view-book.component';
 import { ListListsComponent } from './list/list-lists/list-lists.component';
 import { AddListComponent } from './list/add-list/add-list.component';
 import { EditListComponent } from './list/edit-list/edit-list.component';
+import { ViewListComponent } from './list/view-list/view-list.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { EditListComponent } from './list/edit-list/edit-list.component';
     ViewBookComponent,
     ListListsComponent,
     AddListComponent,
-    EditListComponent
+    EditListComponent,
+    ViewListComponent
   ],
   imports: [
     BrowserModule,

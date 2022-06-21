@@ -8,6 +8,7 @@ import {ViewBookComponent} from "./book/view-book/view-book.component";
 import {ListListsComponent} from "./list/list-lists/list-lists.component";
 import {AddListComponent} from "./list/add-list/add-list.component";
 import {EditListComponent} from "./list/edit-list/edit-list.component";
+import {ViewListComponent} from "./list/view-list/view-list.component";
 
 const routes: Routes = [
   {path: "home", component: HomeComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path: 'books', component: ListBooksComponent},
   {path: 'lists', component: ListListsComponent},
   {path: 'lists/new', component: AddListComponent},
-  {path: 'lists/:id/edit', component: EditListComponent}
+  {path: 'lists/:id/edit', component: EditListComponent},
+  {path: 'lists/:id/details', component: ViewListComponent},
 ];
 
 @NgModule({
