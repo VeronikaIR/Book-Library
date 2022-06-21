@@ -1,0 +1,25 @@
+<div align="center">
+  <div class="col-md-6 user-container">
+    <h2 class="text-center">Edit List</h2>
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" formControlName="name" placeholder="Name" name="Name" class="form-control"
+               id="name">
+      </div>
+      <br/>
+
+      <div class="form-group">
+        <label for="name">Initial book in list:</label>
+        <br/>
+        <select multiple formControlName="books" class="form-select">
+          <option name="books" class="form-control"
+                  id="books" *ngFor="let book of existingBooks" [ngValue]="book">{{book.title}}</option>
+        </select>
+      </div>
+
+      <br/>
+      <button class="btn btn-success">✓ Save</button>
+    </form>
+  </div>
+</div>

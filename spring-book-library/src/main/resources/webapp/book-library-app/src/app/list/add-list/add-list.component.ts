@@ -31,7 +31,6 @@ export class AddListComponent implements OnInit {
   onSubmit() {
     this.listService.addList(this.addForm.value)
       .subscribe(data => {
-        console.log("aa")
         this.router.navigate(['lists']);
       });
   }

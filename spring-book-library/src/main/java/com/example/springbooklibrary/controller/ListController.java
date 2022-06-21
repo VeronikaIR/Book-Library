@@ -42,6 +42,13 @@ public class ListController {
         return new ResponseEntity<>(list, HttpStatus.CREATED);
     }
 
+    @PutMapping("/lists/{id}")
+    public ResponseEntity<List> editList(@RequestBody List list){
+        listRepository.save(list);
+
+        return new ResponseEntity<>(list, HttpStatus.OK);
+    }
+
     @PostMapping("/lists/{listId}/books/{bookId}")
     public ResponseEntity<List> addBookToList(@PathVariable("listId") Long listId, @PathVariable("bookId") Long bookId) {
         List list = listRepository.findById(listId).get();

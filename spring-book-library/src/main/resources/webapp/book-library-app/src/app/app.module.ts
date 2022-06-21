@@ -13,6 +13,7 @@ import { EditBookComponent } from './book/edit-book/edit-book.component';
 import { ViewBookComponent } from './book/view-book/view-book.component';
 import { ListListsComponent } from './list/list-lists/list-lists.component';
 import { AddListComponent } from './list/add-list/add-list.component';
+import { EditListComponent } from './list/edit-list/edit-list.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AddListComponent } from './list/add-list/add-list.component';
     EditBookComponent,
     ViewBookComponent,
     ListListsComponent,
-    AddListComponent
+    AddListComponent,
+    EditListComponent
   ],
   imports: [
     BrowserModule,
