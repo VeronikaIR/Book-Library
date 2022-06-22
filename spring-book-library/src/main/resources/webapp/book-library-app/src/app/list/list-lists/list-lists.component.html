@@ -16,9 +16,9 @@
       <div class="col-6 offset-3">
         <table class="table-primary col-6" style="width: 100%">
           <tr class="table-primary">
-            <th class="table-primary">Name</th>
+            <th class="table-primary" (click)="sortByName()">Name</th>
             <th class="table-primary">Books</th>
-            <th class="table-primary">Count</th>
+            <th class="table-primary" (click)="sortByCount()">Count</th>
             <th class="table-primary"></th>
           </tr>
           <tr *ngFor="let list of filteredLists" class="table-primary list-row">

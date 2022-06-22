@@ -55,4 +55,27 @@ export class ListBooksComponent implements OnInit {
     }
   }
 
+  sortByTitle() {
+    this.filteredBooks.sort(function (a: Book, b: Book): number {
+        return a.title.localeCompare(b.title) ;
+    })
+  }
+
+  sortByGenre() {
+    this.filteredBooks.sort(function (a: Book, b: Book): number {
+      return a.genre.localeCompare(b.genre) ;
+    })
+  }
+
+  sortByAuthor() {
+    this.filteredBooks.sort(function (a: Book, b: Book): number {
+      return a.author.localeCompare(b.author) ;
+    })
+  }
+
+  sortByISBN() {
+    this.filteredBooks.sort(function (a: Book, b: Book): number {
+      return a.isbn.localeCompare(b.isbn) ;
+    })
+  }
 }

@@ -17,10 +17,10 @@
       <table class="table-primary col-6" style="width: 100%">
         <tr class="table-primary">
           <th class="table-primary">Cover</th>
-          <th class="table-primary">Title</th>
-          <th class="table-primary">Genre</th>
-          <th class="table-primary">Author</th>
-          <th class="table-primary">ISBN</th>
+          <th class="table-primary table-header" (click)="sortByTitle()">Title</th>
+          <th class="table-primary table-header" (click)="sortByGenre()">Genre</th>
+          <th class="table-primary table-header" (click)="sortByAuthor()">Author</th>
+          <th class="table-primary table-header" (click)="sortByISBN()">ISBN</th>
           <th class="table-primary"></th>
         </tr>
         <tr *ngFor="let book of filteredBooks" class="table-primary book-row">

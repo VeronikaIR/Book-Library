@@ -2,3 +2,7 @@
   background-color: #f3f3f3;
   cursor: pointer;
 }
+
+.table-header:hover {
+  cursor: pointer;
+}
