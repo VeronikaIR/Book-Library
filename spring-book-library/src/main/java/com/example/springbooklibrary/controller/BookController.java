@@ -9,6 +9,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.Set;
 
 @RestController
@@ -44,6 +47,18 @@ public class BookController {
         }
 
         return new ResponseEntity<>(savedBook, HttpStatus.CREATED);
+    }
+
+    @PostMapping("/books/{bookId}/notes")
+    public ResponseEntity<Note> addBookNote(@RequestBody Note note, @PathVariable("bookId") Long bookId) {
+        Book book = bookRepository.findById(bookId).get();
+
+        note.setCreationTime(new Date());
+        note.setBook(book);
+
+        noteRepository.save(note);
+
+        return new ResponseEntity<>(note, HttpStatus.CREATED);
     }
 
     @PutMapping("/books/{id}")

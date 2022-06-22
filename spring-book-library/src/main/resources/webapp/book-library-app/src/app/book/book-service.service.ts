@@ -25,6 +25,10 @@ export class BookService {
     return this.http.post(`${this.url}`, book);
   }
 
+  addBookNote(bookId: number, note: Object): Observable<Object> {
+    return this.http.post(`${this.url}/${bookId}/notes`, note);
+  }
+
   editBook(book: Book): Observable<Object> {
     return this.http.put(`${this.url}/${book.id}`, book);
   }

@@ -1,3 +1,5 @@
+import {Note} from "./Note";
+
 export class Book {
   id: number;
   title: string;
@@ -5,4 +7,5 @@ export class Book {
   author: string;
   isbn: string;
   coverUrl: string;
+  notes: Note[];
 }

@@ -42,6 +42,10 @@ public class Note {
         return creationTime;
     }
 
+    public void setCreationTime(Date creationTime) {
+        this.creationTime = creationTime;
+    }
+
     public Book getBook() {
         return book;
     }
