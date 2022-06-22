@@ -9,7 +9,10 @@ import {BookService} from "../book-service.service";
   styleUrls: ['./list-books.component.css']
 })
 export class ListBooksComponent implements OnInit {
+
   books: Book[];
+  filteredBooks: Book[];
+  bookFilter: string;
 
   constructor(private router: Router, private bookService: BookService) {
   }
@@ -21,6 +24,7 @@ export class ListBooksComponent implements OnInit {
   getBooks() {
     this.bookService.getBooks().subscribe(data => {
       this.books = data;
+      this.filteredBooks = data;
     });
   }
 
@@ -40,6 +44,15 @@ export class ListBooksComponent implements OnInit {
     this.bookService.deleteBook(book.id).subscribe(_ => {
       this.getBooks();
     });
+  }
+
+  filterBooks(bookFilter: string) {
+    this.filteredBooks = [];
+    for (let i = 0; i < this.books.length; i++) {
+        if (this.books[i].title.toLocaleLowerCase().includes(bookFilter.toLowerCase())) {
+          this.filteredBooks.push(this.books[i]);
+        }
+    }
   }
 
 }

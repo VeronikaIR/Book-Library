@@ -1,4 +1,4 @@
-<div>
+<div class="container">
   <div align='center'>
     <h1>📃 Lists</h1>
   </div>
@@ -11,8 +11,16 @@
 
   <br/>
 
+  <div class="row" align="cebter">
+    <div class="col-6 offset-3">
+      <label>Search: </label>
+      <input type="text" [(ngModel)]="bookFilter" (keyup)="filterBooks(bookFilter)">
+    </div>
+  </div>
+  <br/>
+
   <div class="list-group">
-    <div *ngFor="let book of list.books" class="row book-row">
+    <div *ngFor="let book of filteredBooks" class="row book-row">
       <div class="col-6 offset-3">
         <a (click)="viewBook(book)" class="list-group-item list-group-item-action flex-column align-items-start active">
           <div class="d-flex w-100 justify-content-between">

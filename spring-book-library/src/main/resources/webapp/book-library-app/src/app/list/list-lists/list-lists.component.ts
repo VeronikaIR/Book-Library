@@ -9,7 +9,10 @@ import {ListService} from "../list-service.service";
   styleUrls: ['./list-lists.component.css']
 })
 export class ListListsComponent implements OnInit {
+
   lists: List[];
+  filteredLists: List[];
+  listFilter: string;
 
   constructor(private router: Router, private listService: ListService) {
   }
@@ -21,6 +24,7 @@ export class ListListsComponent implements OnInit {
   getLists() {
     this.listService.getLists().subscribe(data => {
       this.lists = data;
+      this.filteredLists = data;
     });
   }
 
@@ -42,4 +46,12 @@ export class ListListsComponent implements OnInit {
     });
   }
 
+  filterLists(listFilter: string) {
+    this.filteredLists = [];
+    for (let i = 0; i < this.lists.length; i++) {
+      if (this.lists[i].name.toLocaleLowerCase().includes(listFilter.toLowerCase())) {
+        this.filteredLists.push(this.lists[i]);
+      }
+    }
+  }
 }

@@ -16,6 +16,9 @@ export class ViewListComponent implements OnInit {
   listId: number;
   list: List;
 
+  filteredBooks: Book[];
+  bookFilter: string;
+
   constructor(private formBuilder: FormBuilder, private router: Router, private route: ActivatedRoute, private listService: ListService, private bookService: BookService) {
     route.params.subscribe( params => this.listId = params['id'] );
   }
@@ -27,6 +30,7 @@ export class ViewListComponent implements OnInit {
   initList(id: number) {
     this.listService.getList(id).subscribe(data => {
       this.list = data;
+      this.filteredBooks = this.list.books;
     });
   }
 
@@ -34,4 +38,12 @@ export class ViewListComponent implements OnInit {
     this.router.navigate(['books/' + book.id + '/details']);
   }
 
+  filterBooks(bookFilter: string) {
+    this.filteredBooks = [];
+    for (let i = 0; i < this.list.books.length; i++) {
+      if (this.list.books[i].title.toLocaleLowerCase().includes(bookFilter.toLowerCase())) {
+        this.filteredBooks.push(this.list.books[i]);
+      }
+    }
+  }
 }

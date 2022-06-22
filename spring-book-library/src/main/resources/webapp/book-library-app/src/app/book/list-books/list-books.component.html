@@ -1,10 +1,17 @@
 <div align="center" xmlns="http://www.w3.org/1999/html">
-  <div align='center'>
+  <div align="center">
     <h1>📚 Books</h1>
   </div>
 
   <br/><br/>
   <div class="container">
+    <div class="row">
+      <div class="col-2">
+        <label>Search:</label>
+        <input type="text" [(ngModel)]="bookFilter" (keyup)="filterBooks(bookFilter)">
+      </div>
+    </div>
+    <br/>
     <div class="row">
       <div class="col"></div>
       <table class="table-primary col-6" style="width: 100%">
@@ -16,7 +23,7 @@
           <th class="table-primary">ISBN</th>
           <th class="table-primary"></th>
         </tr>
-        <tr *ngFor="let book of books" class="table-primary book-row">
+        <tr *ngFor="let book of filteredBooks" class="table-primary book-row">
           <td class="table-primary">
                 <img src="{{book.coverUrl}}" height="80" width="50"/>
           </td>

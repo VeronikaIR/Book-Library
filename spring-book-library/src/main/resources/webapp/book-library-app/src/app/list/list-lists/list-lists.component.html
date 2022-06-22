@@ -5,6 +5,13 @@
 
   <br/><br/>
   <div class="container">
+    <div class="row" align="cebter">
+      <div class="col-6 offset-3">
+        <label>Search: </label>
+        <input type="text" [(ngModel)]="listFilter" (keyup)="filterLists(listFilter)">
+      </div>
+    </div>
+    <br/>
     <div class="row">
       <div class="col-6 offset-3">
         <table class="table-primary col-6" style="width: 100%">
@@ -14,7 +21,7 @@
             <th class="table-primary">Count</th>
             <th class="table-primary"></th>
           </tr>
-          <tr *ngFor="let list of lists" class="table-primary list-row">
+          <tr *ngFor="let list of filteredLists" class="table-primary list-row">
             <td class="table-primary">
               {{list.name}}
             </td>
