@@ -12,6 +12,7 @@ The project is based on two components:
 
 - `git`
 - `java`
+- `npm`
 - `ng` command-line tool
 - `mvn`
 - `docker`
@@ -36,7 +37,8 @@ Execute the following steps in order to run the Angular server:
 
 1. Go back to where the repository was cloned
 2. `cd Book-Library/spring-book-library/src/main/resources/webapp/book-library-app`
-3. `ng serve`
+3. `npm install`
+4. `ng serve`
 
 > Frontend server should now run at: http://localhost:4200
 
