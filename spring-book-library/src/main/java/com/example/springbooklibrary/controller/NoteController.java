@@ -1,6 +1,5 @@
 package com.example.springbooklibrary.controller;
 
-import com.example.springbooklibrary.model.List;
 import com.example.springbooklibrary.model.Note;
 import com.example.springbooklibrary.repository.NoteRepository;
 import org.springframework.http.HttpStatus;
@@ -8,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200") //since we’re just working locally
+@CrossOrigin(origins = "http://localhost:4200")
 public class NoteController {
 
     NoteRepository noteRepository;
