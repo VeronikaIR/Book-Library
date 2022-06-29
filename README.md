@@ -39,3 +39,5 @@ Execute the following steps in order to run the Angular server:
 3. `ng serve`
 
 > Frontend server should now run at: http://localhost:4200
+
+> Additionally you can import the Postman collection located at `Book-Library/Book Library.postman_collection.json` and manually make HTTP requests
