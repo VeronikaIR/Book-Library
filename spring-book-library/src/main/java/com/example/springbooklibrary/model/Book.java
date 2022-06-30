@@ -21,6 +21,7 @@ public class Book {
 
     private String isbn;
 
+    @Column(length = 2048)
     private String coverUrl;
 
     @OneToMany(mappedBy="book", cascade = {CascadeType.REMOVE})
